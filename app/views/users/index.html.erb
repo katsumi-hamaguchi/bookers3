@@ -1,0 +1,14 @@
+ <h2>New book</h2>
+
+  <%= form_for(@book) do |f| %>
+    <h4>Title<br>
+      <%= f.text_field :title %><br>
+      Body<br>
+      <%= f.text_area :body %>
+      <br><%= f.submit 'Create Book' %>
+    </h4>
+<% end %>
+
+<% @users.each do |user| %>
+  <%= user.username %><br>
+<% end %>

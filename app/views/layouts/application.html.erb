@@ -18,24 +18,24 @@
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           </li>
           <li class="">
-            <%= link_to 'マイページ→Books', user_path(current_user.id) %>
+            <%= link_to 'Home', user_path(current_user.id) %>
           </li>
           <li class="">
-            <%= link_to 'マイページ→Books', user_path(current_user.id) %>
+            <%= link_to 'Books', books_path %>
           </li>
           <li class="">
-            <%= link_to 'マイページ→Users', user_path(current_user.id) %>
+            <%= link_to 'Users', users_path %>
           </li>
 
           <% else %>
           <li class="">
-            <%= link_to "Home", new_user_registration_path %>
+            <%= link_to "Home", root_path %>
           </li>
           <li class="">
             <%= link_to "About", new_user_registration_path %>
           </li>
           <li class="">
-            <%= link_to "sigin up", "/users/sign_up" %>
+            <%= link_to "sign up", "/users/sign_up" %>
           </li>
           <li class="">
             <%= link_to "login", "/users/sign_in" %>

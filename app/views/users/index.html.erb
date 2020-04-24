@@ -1,4 +1,7 @@
- <h2>New book</h2>
+
+<%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", size: "100x100"%>
+
+     <h2>New book</h2>
 
   <%= form_for(@book) do |f| %>
     <h4>Title<br>
@@ -23,9 +26,9 @@
           <tbody>
           	<% @users.each do |user| %>
             <tr>
-              <td>画像</td>
+              <td><%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg", size: "100x100"%></td>
               <td class="a"><%= user.name %></td>
-              <td class="b"><%= link_to "Show",book_path(user.id) %></td>
+              <td class="b"><%= link_to "Show",user_path(user.id) %></td>
               
 
 

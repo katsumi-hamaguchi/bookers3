@@ -7,10 +7,14 @@
     <h2>Book detail</h2>
     <p>
       Title: <%= @book.title %> 
-      Body: <%= @book.body %> 
-      <%= link_to "Edit", edit_book_path(@book.id) %>
-    
-      <%= link_to "Destroy", book_path(@book.id), method: :delete %>
+      Body: <%= @book.body %>
+
+        <% if @book.user == current_user %>
+        
+        <%= link_to "Edit", edit_book_path(@book.id) %>
+        <%= link_to "Destroy", book_path(@book.id), method: :delete %>
+
+        <% end %>
     </p>
 
 

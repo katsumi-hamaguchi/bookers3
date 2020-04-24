@@ -22,7 +22,7 @@ class BooksController < ApplicationController
      @book.user_id = current_user.id
 
      if @book.save
-     	flash[:notice] = "Book was successfully."
+     	flash[:notice] = "You have creatad book successfully."
      redirect_to book_path(@book.id)    
    else
        @books = Book.all

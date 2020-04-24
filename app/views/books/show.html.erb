@@ -1,11 +1,18 @@
 <html>
   <head></head>
   <body>
+
     <p id="notice"><%= notice %></p>
-    <p> Title: <%= @book.title %> </p>
-    <p> Body: <%= @book.body %> </p>
-    <%= link_to "Edit", edit_book_path(@book.id) %>
-    <%= link_to "Back", "/books" %>
+    
+    <h2>Book detail</h2>
+    <p>
+      Title: <%= @book.title %> 
+      Body: <%= @book.body %> 
+      <%= link_to "Edit", edit_book_path(@book.id) %>
+    
+      <%= link_to "Destroy", book_path(@book.id), method: :delete %>
+    </p>
+
 
   
 

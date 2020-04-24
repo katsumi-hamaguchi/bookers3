@@ -9,8 +9,31 @@
     </h4>
 <% end %>
 
-<% @users.each do |user| %>
-  <%= user.name %><br>
-  
+ <h2>Users</h2>
 
-<% end %>
+  <table>
+       	  <thead>
+       	  <tr>
+       	    <th>image</th>
+            <th>name</th>
+            <th></th>
+          </tr>
+          </thead>
+
+          <tbody>
+          	<% @users.each do |user| %>
+            <tr>
+              <td>画像</td>
+              <td class="a"><%= user.name %></td>
+              <td class="b"><%= link_to "Show",book_path(user.id) %></td>
+              
+
+
+              
+            </tr>
+            <% end %>
+          </tbody>
+       </table>
+
+
+  

@@ -1,6 +1,9 @@
 <html>
   <head></head>
   <body>
+
+     <div class="container">
+      <div class="row">
      <div class='col-xs-3'>
     <%= render 'users/list', user: @user, book: @book %>
   </div>
@@ -9,9 +12,10 @@
     
     <h2>Book detail</h2>
     <p>
-      <%= attachment_image_tag current_user, :profile_image, fallback: "no_image.jpg", size: "100x100"%>
+      <%= attachment_image_tag @book.user, :profile_image, fallback: "no_image.jpg", size: "100x100"%>
       Title: <%= @book.title %> 
       Body: <%= @book.body %>
+         <%= link_to user_path(@book.user_id) do %><%= @book.user.name %><% end %>
 
         <% if @book.user == current_user %>
         
@@ -20,6 +24,8 @@
 
         <% end %>
     </p>
+    </div>
+  </div>
   </div>
   </body>
 </html>

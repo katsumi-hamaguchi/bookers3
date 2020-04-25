@@ -10,6 +10,16 @@
                           <div class="form-user style-1 rounded has-shadow-1"> 
                             <div class="form-header text-center">
                                 <h2 class="form-header-title">User info</h2>
+                                <% if @user.errors.any? %>
+                                    <div id="error_explanation">
+                                      <h3><%= @user.errors.count %>errors prohibited this book from being saved:</h3>
+                                      <ul>
+                                       <% @user.errors.full_messages.each do |msg| %>
+                                       <li><%= msg %></li>
+                                       <% end %>
+                                      </ul>
+                                    </div>
+                                <% end %>
                             </div>
                             <div class="form-body">
                               

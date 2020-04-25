@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
 
    before_action :authenticate_user!
-   
+
   def index
     @users = User.all
-    
-    
-     @book = Book.new
+    @book = Book.new
+    @user = current_user
   end
 
   def show

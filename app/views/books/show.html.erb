@@ -13,9 +13,9 @@
     <h2>Book detail</h2>
     <p>
       <%= attachment_image_tag @book.user, :profile_image, fallback: "no_image.jpg", size: "100x100"%>
-      Title: <%= @book.title %> 
-      Body: <%= @book.body %>
-         <%= link_to user_path(@book.user_id) do %><%= @book.user.name %><% end %>
+       <%= @book.title %> 
+       <%= @book.body %>
+         
 
         <% if @book.user == current_user %>
         
@@ -23,6 +23,7 @@
         <%= link_to "Destroy", book_path(@book.id), method: :delete %>
 
         <% end %>
+        <br><%= link_to user_path(@book.user_id) do %><%= @book.user.name %><% end %>
     </p>
     </div>
   </div>
